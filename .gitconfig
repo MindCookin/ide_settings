@@ -1,0 +1,53 @@
+[user]
+  name = Santiago Bernabé
+  email = santiago.bernabe@medianet.es
+
+#[core]
+#  safecrlf = false
+
+[color]
+  diff = true
+  ui = always
+
+[color "status"]
+  added = green
+  changed = yellow
+  untracked = cyan
+
+[merge]
+  tool = vimdiff
+
+[alias]
+  br = branch
+
+  ch = checkout
+  co = commit -am
+  # get list of committers without including merge commits
+  cm = shortlog -nse --no-merges
+  cp = cherry-pick
+
+  df = diff --word-diff
+
+  # find a file path
+  fi = !git ls-files | grep -i
+
+  # search/grep the entire codebase for a string
+  gr = grep -Ii
+
+  # log (hash, relative date, commit, commiter)
+  ld = log --pretty=format:'%C(yellow)%h %C(bold red)%ad%C(reset)%C(red)%d %C(reset)%s%C(blue) [%cn]' --decorate --date=relative
+  # log git history tree graph
+  lg = log --graph --decorate
+  # log edited files per commit
+  ll = log --pretty=format:'%C(yellow)%h%C(red)%d %C(reset)%s%C(blue) [%cn]' --decorate --numstat
+
+  ph = push origin
+  pl = pull origin
+
+  st = status -sb
+
+  tree = log --graph --decorate --pretty=oneline --abbrev-commit
+[url "https://"]
+	insteadOf = git://
+[core]
+	autocrlf = input
